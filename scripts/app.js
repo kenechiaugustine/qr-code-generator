@@ -24,7 +24,7 @@ const onGeneratedSubmit = (e) => {
       setTimeout(() => {
         const saveUrl = qrcode.querySelector('img').src;
         createSaveBtn(saveUrl);
-      });
+      }, 50);
     }, 1000);
   }
 };
