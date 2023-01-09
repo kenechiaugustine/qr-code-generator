@@ -26,7 +26,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="scripts/app.js"></script>
+    <script src="scripts/app.js" defer></script>
 
     <style>
       #spinner {
@@ -59,7 +59,7 @@
           <p>
             Enter your URL below to generate a QR code and download the image
           </p>
-          <form class="mt-4" id="generate-form">
+          <form class="mt-4" id="generate_form">
             <input
               type="url"
               id="url"
@@ -68,7 +68,6 @@
             />
 
             <select
-              name="image-size"
               id="size"
               class="w-full border-2 border-gray-200 rounded p-3 text-gray-dark mr-2 focus:outline-none"
             >
@@ -100,12 +99,13 @@
 
       <!-- Generated QR Code -->
       <div
+        id="generated"
         class="max-w-5xl m-auto flex flex-col text-center align-center justify-center mt-20"
       >
         <!-- Spinner -->
         <div id="spinner" role="status">
           <svg
-            class="inline mr-2 w-24 h-24 text-gray-200 animate-spin dark:text-gray-600 fill-pink-600"
+            class="inline mr-2 w-14 h-14 text-gray-200 animate-spin dark:text-gray-600 fill-pink-600"
             viewBox="0 0 100 101"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
